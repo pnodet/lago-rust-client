@@ -116,7 +116,8 @@ use lago_types::requests::invoice::{ListInvoicesRequest, GetInvoiceRequest};
 
 // List invoices with optional filters
 let request = ListInvoicesRequest::builder()
-    .limit(10)
+    .per_page(10)
+    .page(1)
     .build();
 let invoices = client.list_invoices(Some(request)).await?;
 
